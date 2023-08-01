@@ -40,8 +40,8 @@ struct JokesView: View {
         }
 
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data, error != nil else {
-                print("Error: Empty data")
+            guard let data = data, error == nil else {
+                print(error.localizedDescription)
                 return
             }
 
