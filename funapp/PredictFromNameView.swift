@@ -59,8 +59,8 @@ struct PredictFromNameView: View {
         
         URLSession.shared.dataTask(with: components.url!) { data, _, error in
 
-            guard let data = data, error != nil else {
-                print("Error: Empty data")
+            guard let data = data, error == nil else {
+                print(error.localizedDescription)
                 return
             }
             
